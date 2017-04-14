@@ -11,8 +11,8 @@
 			{!! Form::control('email', 0, 'email', $errors, trans('back/users.email')) !!}
 			{!! Form::control('password', 0, 'password', $errors, trans('back/users.password')) !!}
 			{!! Form::control('password', 0, 'password_confirmation', $errors, trans('back/users.confirm-password')) !!}
-			{!! Form::selection('role', $select, null, trans('back/users.role')) !!}
-			{!! Form::submit(trans('front/form.send')) !!}
+			{!! Form::selection('offeringId', $offerings, null, 'Select Offering') !!}
+			{!! Form::submit('Submit') !!}
 		{!! Form::close() !!}
 	</div>
 

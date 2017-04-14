@@ -29,12 +29,15 @@ Route::group(['middleware' => ['web']], function () {
 	Route::get('articles', 'BlogController@indexFront');
 	Route::get('blog/tag', 'BlogController@tag');
 	Route::get('blog/search', 'BlogController@search');
-
+	
+    Route::resource('photo', 'PhotoController');
 	Route::put('postseen/{id}', 'BlogController@updateSeen');
 	Route::put('postactive/{id}', 'BlogController@updateActive');
-
-	Route::resource('blog', 'BlogController');
-
+	Route::get('purchase/getlist', 'PurchaseController@getlist');
+	Route::get('purchase/list', 'PurchaseController@index');
+    Route::resource('purchase', 'PurchaseController@store');
+	Route::resource('purchase/create', 'PurchaseController@create');
+    
 	// Comment
 	Route::resource('comment', 'CommentController', [
 		'except' => ['create', 'show']
